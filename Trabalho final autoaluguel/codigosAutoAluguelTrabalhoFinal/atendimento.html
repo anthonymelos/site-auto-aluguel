@@ -65,20 +65,4 @@
 
   </style>
 </body>
-
-<!--BACKEND-->
-<script>
-  document.getElementById("form-atendimento").addEventListener("submit", function(e){
-    e.preventDefault();
-    const email = document.getElementById("email-atendimento").value;
-    const mensagem = document.getElementById("mensagem").value;
-
-    firebase.database().ref("atendimentos").push({
-      email,
-      mensagem
-    }).then(() => {
-      alert("Mensagem enviada com sucesso!");
-    });
-  });
-</script>
 </html>

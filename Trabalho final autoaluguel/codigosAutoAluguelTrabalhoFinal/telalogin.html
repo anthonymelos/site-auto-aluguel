@@ -3,19 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="criarconta.css">
-    <title>Criar Conta</title>
+    <link rel="stylesheet" href="telalogin.css">
+    <title>Entrar</title>
 </head>
 <body>
     <div class="container">
-        <h2>Criar Conta</h2>
+        <h2>Login</h2>
         <form>
-            <input type="text" placeholder="Nome completo" required>
             <input type="email" placeholder="Email" required>
-            <input type="tel" placeholder="Telefone" required>
             <input type="password" placeholder="Senha" required>
-            <input type="password" placeholder="Confirmar senha" required>
-            <button type="submit">Registrar</button>
+            <button type="submit">Entrar</button>
         </form>
     </div>
 
@@ -35,7 +32,7 @@
             padding: 30px;
             border-radius: 8px;
             box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
-            width: 340px;
+            width: 300px;
             text-align: center;
         }
 
@@ -47,7 +44,7 @@
         input {
             width: 100%;
             padding: 10px;
-            margin: 8px 0;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -55,7 +52,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #e67e22;
+            background-color: #3498db;
             color: white;
             border: none;
             border-radius: 5px;
@@ -64,31 +61,9 @@
         }
 
         button:hover {
-            background-color: #d35400;
+            background-color: #2980b9;
         }
 
     </style>
-
 </body>
-
-<!--BACKEND-->
-
-<script>
-  document.getElementById("form-criar-conta").addEventListener("submit", function(e){
-    e.preventDefault();
-    const nome = document.getElementById("nome").value;
-    const email = document.getElementById("email").value;
-    const senha = document.getElementById("senha").value;
-
-    firebase.database().ref("usuarios").push({
-      nome: nome,
-      email: email,
-      senha: senha
-    }).then(() => {
-      alert("Conta criada com sucesso!");
-    });
-  });
-</script>
-
-</script>
 </html>

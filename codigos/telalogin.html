@@ -66,4 +66,23 @@
 
     </style>
 </body>
+
+<!--BACKEND-->
+
+<script>
+  document.getElementById("form-login").addEventListener("submit", function(e){
+    e.preventDefault();
+    const email = document.getElementById("email-login").value;
+    const senha = document.getElementById("senha-login").value;
+
+    firebase.database().ref("usuarios").orderByChild("email").equalTo(email).once("value")
+      .then(snapshot => {
+        if (snapshot.exists()) {
+          alert("Login bem-sucedido!");
+        } else {
+          alert("Usuário não encontrado.");
+        }
+      });
+  });
+</script>
 </html>

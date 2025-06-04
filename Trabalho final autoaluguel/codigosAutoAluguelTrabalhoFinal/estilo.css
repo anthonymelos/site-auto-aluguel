@@ -1,0 +1,146 @@
+@charset "UTF-8";
+
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #002f6c;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+}
+
+nav {
+    background-color: #004b8d;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #ffc107;
+    color: #002f6c;
+}
+
+/* Conteúdo principal */
+main {
+    max-width: 900px;
+    background-color: white;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section#apresentacao p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Área de pesquisa */
+p#AreaPesquisa {
+    text-align: center;
+    margin: 30px 0;
+}
+
+textarea {
+    padding: 10px;
+    margin: 5px;
+    width: 250px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #004b8d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ffc107;
+    color: #002f6c;
+}
+
+/* Carrossel de imagens */
+figure#anuncios {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 300px;
+    margin: 0 auto 30px auto;
+    overflow: hidden;
+}
+
+figure#anuncios img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+    border-radius: 10px;
+    transition: opacity 1s ease-in-out;
+}
+
+img#anuncio1 {
+    display: block;
+}
+
+/* Rodapé */
+footer {
+    background-color: #002f6c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 50px;
+}
+
+/* Telas pequenas (responsivo) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    textarea {
+        width: 90%;
+    }
+
+    main {
+        width: 95%;
+        padding: 20px;
+    }
+
+    figure#anuncios {
+        height: 200px;
+    }
+}

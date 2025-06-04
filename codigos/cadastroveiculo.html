@@ -68,5 +68,25 @@
 
     </style>
 </body>
+
+<!--BACKEND-->
+<script>
+  document.getElementById("form-veiculo").addEventListener("submit", function(e){
+    e.preventDefault();
+    const modelo = document.getElementById("modelo").value;
+    const marca = document.getElementById("marca").value;
+    const ano = document.getElementById("ano").value;
+    const preco = document.getElementById("preco").value;
+
+    firebase.database().ref("veiculos").push({
+      modelo,
+      marca,
+      ano,
+      preco
+    }).then(() => {
+      alert("Veículo cadastrado!");
+    });
+  });
+</script>
 </html>
 
